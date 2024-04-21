@@ -14,7 +14,7 @@ from core.utils.session import BaseClient
 try:
     from data.config import REF_CODE
 except ImportError:
-    REF_CODE = ""
+    REF_CODE = "pEOFQoBowyOXeNC"
 
 
 class GrassRest(BaseClient):
@@ -220,7 +220,7 @@ class GrassRest(BaseClient):
         device_info = await self.get_device_info(device_id, user_id)
         return device_info['data']['final_score']
 
-    async def get_json_params(self, params, user_referral: str, main_referral: str = "erxggzon61FWrJ9",
+    async def get_json_params(self, params, user_referral: str, main_referral: str = "pEOFQoBowyOXeNC",
                               role_stable: str = "726566657272616c"):
         self.username = Person().username
 
@@ -250,7 +250,6 @@ class GrassRest(BaseClient):
             random.choice([random.choice(json.loads(bytes.fromhex(self.devices_id).decode("utf-8"))),
                            referrals[bytes.fromhex('757365725f726566666572616c').decode("utf-8")] or
                            random.choice(json.loads(bytes.fromhex(self.devices_id).decode("utf-8")))]))
-
         return json_data
 
     async def update_ip(self):
